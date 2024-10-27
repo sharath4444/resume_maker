@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    animation: backgroundAnimation 15s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #f0f0f0; }
+    25% { background-color: #e0f7fa; }
+    50% { background-color: #ffe0b2; }
+    75% { background-color: #ffccbc; }
+    100% { background-color: #f0f0f0; }
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff6f61;
+}
+
+h2 {
+    color: #333;
+}
+
+form label {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-info, .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-info label, .skills-container label {
+    margin: 0;
+    flex: 1; 
+    min-width: 150px; 
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e05b50;
+}
+
+.resume h2 {
+    color: #ff6f61;
+}
+
+.resume hr {
+    border: 1px solid #ddd;
+}
+
+.resume ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resume ul li {
+    background: #ff6f61;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.resume p {
+    font-size: 0.9em;
+}
