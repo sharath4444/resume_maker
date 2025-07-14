@@ -8,8 +8,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
+  <header class="main-header">
+    <span class="header-title">Resume Maker</span>
+    <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()">🌙 Dark Mode</button>
+  </header>
   <div class="container">
-    <h1>Resume Maker</h1>
+    <h1 style="display:none;">Resume Maker</h1>
     <form id="resumeForm">
       <!-- Contact Information -->
       <h2>Contact Information</h2>
@@ -35,7 +39,10 @@
       <!-- Projects -->
       <h2>Projects</h2>
       <hr>
-      <textarea id="projects" placeholder="Project details including name, technologies used, and description"></textarea><br>
+      <div id="projectsSection">
+        <!-- Project cards will be inserted here -->
+      </div>
+      <button type="button" id="addProjectBtn">+ Add Project</button>
 
       <!-- Achievements -->
       <h2>Achievements</h2>
@@ -51,12 +58,9 @@
       <h2>Skills</h2>
       <hr>
       <div class="skills-container">
-        <label><input type="checkbox" id="html" value="HTML"> HTML</label>
-        <label><input type="checkbox" id="css" value="CSS"> CSS</label>
-        <label><input type="checkbox" id="js" value="JavaScript"> JavaScript</label>
-        <label><input type="checkbox" id="git" value="Git"> Git</label>
-        <label><input type="checkbox" id="react" value="React"> React</label>
-        <label><input type="checkbox" id="nodejs" value="Node.js"> Node.js</label>
+        <input type="text" id="skillInput" placeholder="Type to search and add skills..." autocomplete="off">
+        <div id="skillsSuggestions" class="suggestions"></div>
+        <div id="selectedSkills" class="selected-skills"></div>
       </div>
 
       <!-- Buttons -->
@@ -64,8 +68,14 @@
       <button type="button" onclick="saveResume()">Save Resume</button>
     </form>
 
+    <div id="formMessage" class="form-message"></div>
+    <div id="loadingIcon" class="loading-icon" style="display:none;"></div>
+
     <div id="resumeDisplay" class="resume" style="display: none;"></div>
   </div>
+  <footer class="main-footer">
+    &copy; 2025 Resume Maker. All rights reserved.
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
