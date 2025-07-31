@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Maker</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <span class="header-title">Resume Maker</span>
+    <button id="themeToggle" class="theme-toggle" type="button" onclick="toggleTheme()">🌙 Dark Mode</button>
+  </header>
+  <div class="container">
+    <h1 style="display:none;">Resume Maker</h1>
+    <form id="resumeForm">
+      <!-- Contact Information -->
+      <h2>Contact Information</h2>
+      <hr>
+      <label>Name:</label>
+      <input type="text" id="name" placeholder="Your Name" required><br>
+      <div class="contact-info">
+        <label>Phone:</label>
+        <input type="text" id="phone" placeholder="Your Phone Number" required>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <label>LinkedIn:</label>
+        <input type="text" id="linkedin" placeholder="LinkedIn URL">
+        <label>GitHub:</label>
+        <input type="text" id="github" placeholder="GitHub URL">
+      </div>
+
+      <!-- Education -->
+      <h2>Education</h2>
+      <hr>
+      <textarea id="education" placeholder="Your educational background" required></textarea><br>
+
+      <!-- Projects -->
+      <h2>Projects</h2>
+      <hr>
+      <div id="projectsSection">
+        <!-- Project cards will be inserted here -->
+      </div>
+      <button type="button" id="addProjectBtn">+ Add Project</button>
+
+      <!-- Achievements -->
+      <h2>Achievements</h2>
+      <hr>
+      <textarea id="achievements" placeholder="List your achievements"></textarea><br>
+
+      <!-- Certifications -->
+      <h2>Certifications</h2>
+      <hr>
+      <textarea id="certifications" placeholder="List your certifications"></textarea><br>
+
+      <!-- Skills -->
+      <h2>Skills</h2>
+      <hr>
+      <div class="skills-container">
+        <input type="text" id="skillInput" placeholder="Type to search and add skills..." autocomplete="off">
+        <div id="skillsSuggestions" class="suggestions"></div>
+        <div id="selectedSkills" class="selected-skills"></div>
+      </div>
+
+      <!-- Buttons -->
+      <button type="button" onclick="generateResume()">Generate Resume</button>
+      <button type="button" onclick="saveResume()">Save Resume</button>
+    </form>
+
+    <div id="formMessage" class="form-message"></div>
+    <div id="loadingIcon" class="loading-icon" style="display:none;"></div>
+
+    <div id="resumeDisplay" class="resume" style="display: none;"></div>
+  </div>
+  <footer class="main-footer">
+    &copy; 2024 Resume Maker. All rights reserved.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
